@@ -11,18 +11,6 @@ import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const localization = {
-  signIn: {
-    start: {
-      title: '{{applicationName}}',
-      subtitle: 'Entre com uma rede social',
-    },
-    emailCode: {
-      subtitle: 'to access {{applicationName}}'
-    }
-  }
-};
-
 export const metadata: Metadata = {
   title: "DimitriConnect",
   description: "Video Chamadas",
