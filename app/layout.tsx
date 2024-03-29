@@ -10,7 +10,6 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "DimitriConnect",
   description: "Video Chamadas",
@@ -23,7 +22,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <ClerkProvider
         localization={ptBR}
         appearance={{
