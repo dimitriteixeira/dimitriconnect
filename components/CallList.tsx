@@ -77,9 +77,11 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
                   : '/icons/recordings.svg'
             }
             title={
-              (meeting as Call).state?.custom?.description ||
-              (meeting as CallRecording).filename?.substring(0, 20) ||
-              'Sem descrição'
+              (meeting as Call).state?.custom?.description === "Instant Meeting" ?
+                "Reunião Rápida" :
+                (meeting as Call).state?.custom?.description ||
+                (meeting as CallRecording).filename?.substring(0, 20) ||
+                'Sem descrição'
             }
             date={
               (meeting as Call).state?.startsAt?.toLocaleString() ||
@@ -92,7 +94,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
                 : `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${(meeting as Call).id}`
             }
             buttonIcon1={type === 'recordings' ? '/icons/play.svg' : undefined}
-            buttonText={type === 'recordings' ? 'Play' : 'Start'}
+            buttonText={type === 'recordings' ? 'Play' : 'Iniciar'}
             handleClick={
               type === 'recordings'
                 ? () => router.push(`${(meeting as CallRecording).url}`)
