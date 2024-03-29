@@ -18,7 +18,7 @@ const Home = () => {
   const adjustedTime = new Date(currentTime.getTime() - 3 * 60 * 60 * 1000);
   const hours = adjustedTime.getHours().toString().padStart(2, '0');
   const minutes = adjustedTime.getMinutes().toString().padStart(2, '0');
-  const seconds = adjustedTime.getSeconds().toString().padStart(2, '0');
+  //const seconds = adjustedTime.getSeconds().toString().padStart(2, '0');
   const time = `${hours}:${minutes}`;//add :${seconds} se quiser
 
   // Formatação da data
