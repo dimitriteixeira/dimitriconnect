@@ -14,14 +14,13 @@ const Home = () => {
     return () => clearInterval(intervalId);
   }, []); // Executa apenas uma vez ao montar o componente
 
-  // Ajusta o tempo para -3 horas
-  const adjustedTime = new Date(currentTime.getTime() - 3 * 60 * 60 * 1000);
-  const hours = adjustedTime.getHours().toString().padStart(2, '0');
-  const minutes = adjustedTime.getMinutes().toString().padStart(2, '0');
+  // Formatação da hora
+  const hours = currentTime.getHours().toString().padStart(2, '0');
+  const minutes = currentTime.getMinutes().toString().padStart(2, '0');
   const time = `${hours}:${minutes}`;
 
   // Formatação da data
-  const date = (new Intl.DateTimeFormat('pt-BR', { dateStyle: 'full' })).format(adjustedTime);
+  const date = (new Intl.DateTimeFormat('pt-BR', { dateStyle: 'full' })).format(currentTime);
 
   return (
     <section className="flex size-full flex-col gap-5 text-white">
