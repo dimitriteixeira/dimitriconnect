@@ -1,6 +1,6 @@
 {
-  "name": "yoom",
-  "version": "0.1.0",
+  "name": "DimitriConnect",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
