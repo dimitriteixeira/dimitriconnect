@@ -25,7 +25,7 @@ const Alert = ({ title, iconUrl }: PermissionCardProps) => {
             </div>
 
             <Button asChild className="bg-blue-1">
-              <Link href="/">Back to Home</Link>
+              <Link href="/">Voltar para Home</Link>
             </Button>
           </div>
         </CardContent>

@@ -9,6 +9,7 @@ import { useToast } from "./ui/use-toast";
 
 interface MeetingCardProps {
   title: string;
+  userImg: string;
   date: string;
   icon: string;
   isPreviousMeeting?: boolean;
@@ -21,6 +22,7 @@ interface MeetingCardProps {
 const MeetingCard = ({
   icon,
   title,
+  userImg,
   date,
   isPreviousMeeting,
   buttonIcon1,
@@ -42,21 +44,16 @@ const MeetingCard = ({
         </div>
       </article>
       <article className={cn("flex justify-center relative", {})}>
-        <div className="relative flex w-full max-sm:hidden">
-          {avatarImages.map((img, index) => (
-            <Image
-              key={index}
-              src={img}
-              alt="attendees"
-              width={40}
-              height={40}
-              className={cn("rounded-full", { absolute: index > 0 })}
-              style={{ top: 0, left: index * 28 }}
-            />
-          ))}
-          <div className="flex-center absolute left-[136px] size-10 rounded-full border-[5px] border-dark-3 bg-dark-4">
-            +5
-          </div>
+        <div className="relative flex items-center w-full max-sm:hidden">
+          <Image
+            key={1}
+            src={userImg}
+            alt="attendees"
+            width={40}
+            height={40}
+            className={cn("rounded-full")}
+          />
+          <div className="ms-4">Anfitrião </div>
         </div>
         {!isPreviousMeeting && (
           <div className="flex gap-2">
